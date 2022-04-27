@@ -1,0 +1,85 @@
+<div class="content form-group">
+    <form action="/register/{{id}}" method="POST" enctype="multipart/form-data">
+        <div>
+            <div>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Division</td>
+                            <td>
+                                <select name="division" id="division" class="transparent-input form-select">
+                                    <option value="Primier">Primier</option>
+                                    <option value="Second">Second</option>
+                                </select>
+                            </td>
+                            <td>Team Name</td>
+                            <td><input class="form-control transparent-input" type="text" name="teamname"/></td>
+                            <td>City/State</td>
+                            <td><input class="form-control transparent-input" type="text" name="city"/></td>
+                            <td>Year</td>
+                            <td><input class="form-control transparent-input" type="text" name="year"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <th>Title/Description</th>
+                        <th>Full Name</th>
+                        <th>Phone Number</th>
+                        <th>E-mail Address</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Contact/Team Manager</td>
+                            <td><input class="form-control transparent-input" type="text" name="managername"/> </td>
+                            <td><input class="form-control transparent-input" type="text" name="managerphone"/></td>
+                            <td><input class="form-control transparent-input" type="text" name="manageremail"/></td>
+                        </tr>
+                        <tr>
+                            <td>Head Coach</td>
+                            <td><input class="form-control transparent-input" type="text" name="coachname"/> </td>
+                            <td><input class="form-control transparent-input" type="text" name="coachphone"/></td>
+                            <td><input class="form-control transparent-input" type="text" name="coachemail"/></td>
+                        </tr>
+                        <tr>
+                            <td>Assistant Coach</td>
+                            <td><input class="form-control transparent-input" type="text" name="assistantname"/> </td>
+                            <td><input class="form-control transparent-input" type="text" name="assistatntphone"/></td>
+                            <td><input class="form-control transparent-input" type="text" name="assistantemail"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <th>No.</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name/Surname</th>
+                        <th>Date of Birth</th>
+                        <th>E-mail Address</th>
+                        <th>Photo</th>
+                    </thead>
+                    <tbody>
+                        {{#each SN}}
+                            <tr>
+                                <td>{{this}}</td>
+                                <td><input class="form-control transparent-input" type="text" name="firstname{{this}}"/></td>
+                                <td><input class="form-control transparent-input" type="text" name="middlename{{this}}"/></td>
+                                <td><input class="form-control transparent-input" type="text" name="lastname{{this}}"/></td>
+                                <td><input class="form-control transparent-input" type="text" name="dob{{this}}"/></td>
+                                <td><input class="form-control transparent-input" type="text" name="email{{this}}"/></td>
+                                <td><input class="form-control transparent-input" type="file" name="photo{{this}}" accept="image/jpeg" style="color:transparent;" onchange="this.style.color = 'black';"/></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

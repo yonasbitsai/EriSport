@@ -1,0 +1,77 @@
+<div class="content">
+        <div>
+            <div>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Division</td>
+                            <td>{{team.division}}</td>
+                            <td>Team Name</td>
+                            <td>{{team.teamname}}</td>
+                            <td>City/State</td>
+                            <td>{{team.city}}</td>
+                            <td>Year</td>
+                            <td>{{team.year}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <th>Title/Description</th>
+                        <th>Full Name</th>
+                        <th>Phone Number</th>
+                        <th>E-mail Address</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Contact/Team Manager</td>
+                            <td>{{team.managername}}</td>
+                            <td>{{team.managerphone}}</td>
+                            <td>{{team.manageemail}}</td>
+                        </tr>
+                        <tr>
+                            <td>Head Coach</td>
+                            <td>{{team.coachname}}</td>
+                            <td>{{team.coachphone}}</td>
+                            <td>{{team.coachemail}}</td>
+                        </tr>
+                        <tr>
+                            <td>Assistant Coach</td>
+                            <td>{{team.assistantname}}</td>
+                            <td>{{team.assistantphone}}</td>
+                            <td>{{team.assistantemail}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <th>No.</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name/Surname</th>
+                        <th>Date of Birth</th>
+                        <th>E-mail Address</th>
+                        <th>Photo</th>
+                    </thead>
+                    <tbody>
+                        {{#each members}}
+                            <tr>
+                                <td>{{counter @index}}</td>
+                                <td>{{this.firstname}}</td>
+                                <td>{{this.middlename}}</td>
+                                <td>{{this.lastname}}</td>
+                                <td>{{this.dob}}</td>
+                                <td>{{this.email}}</td>
+                                <td> <img src='data:image/jpg;base64,{{{this.photo}}}' alt="Photo not available"/></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,17 @@
+body{
+    width: 80%;
+    margin: 0 10%;
+}
+
+.content{
+    margin-top: 50px;
+}
+
+.header {
+    height:50px;
+    padding:1%;
+}
+
+.title{
+    text-align: center;
+}
